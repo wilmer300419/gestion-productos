@@ -1,0 +1,23 @@
+# Blueprint de Render para DEMOSTRACIÓN GRATUITA.
+# ATENCIÓN: en el plan gratuito el sistema de archivos es EFÍMERO. El archivo SQLite
+# se borra cuando el servicio se reinicia o se vuelve a desplegar (y Render puede reiniciar
+# un servicio gratuito en cualquier momento). Ver README, sección "Despliegue".
+services:
+  - type: web
+    name: gestion-productos
+    runtime: docker
+    plan: free
+    healthCheckPath: /productos
+    envVars:
+      - key: DB_PATH
+        value: /data/productos.db
+      - key: APP_SEED
+        value: "true"
+
+    # --- Para que SQLite SÍ conserve los datos hay que usar un plan de pago + disco persistente ---
+    # (Render solo permite discos persistentes en servicios de pago.) Cambia `plan: free` por un
+    # plan de pago y descomenta:
+    # disk:
+    #   name: datos
+    #   mountPath: /data
+    #   sizeGB: 1
