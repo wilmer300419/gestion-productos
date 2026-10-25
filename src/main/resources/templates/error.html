@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="es" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments :: head('Error')}"></head>
+<body>
+<nav th:replace="~{fragments :: navbar}"></nav>
+<main class="container py-5 text-center" style="max-width: 640px;">
+  <div class="display-4">⚠️</div>
+  <h1 class="h3 mt-3">Algo no salió como esperábamos</h1>
+  <p class="text-muted" th:text="${mensaje != null} ? ${mensaje} : 'La página que buscas no está disponible o ocurrió un error inesperado.'">Mensaje</p>
+  <a th:href="@{/productos}" class="btn btn-primary">Volver al listado</a>
+</main>
+</body>
+</html>

@@ -1,0 +1,20 @@
+:root {
+  --color-fondo: #f4f6fb;
+  --color-primario: #2f4ea2;
+  --color-oscuro: #1e2a4a;
+}
+body { background: var(--color-fondo); color: #1f2937; }
+.app-navbar { background: linear-gradient(90deg, var(--color-oscuro), var(--color-primario)); }
+.stat-card { border: 0; border-left: 5px solid var(--color-primario); box-shadow: 0 1px 4px rgba(0,0,0,.08); }
+.stat-blue  { border-left-color: #2f6fed; }
+.stat-green { border-left-color: #1f9d6b; }
+.stat-amber { border-left-color: #e8a317; }
+.stat-label { font-size: .8rem; text-transform: uppercase; letter-spacing: .04em; color: #6b7280; }
+.stat-value { font-size: 1.8rem; font-weight: 700; line-height: 1.2; }
+.stat-note  { font-size: .72rem; color: #6b7280; margin-top: .25rem; }
+.card { border: 0; border-radius: .75rem; }
+.card-header { background: #fff; border-bottom: 1px solid #e5e7eb; border-radius: .75rem .75rem 0 0 !important; }
+.table > :not(caption) > * > * { padding-top: .75rem; padding-bottom: .75rem; }
+@media (max-width: 575.98px) {
+  .stat-value { font-size: 1.5rem; }
+}
